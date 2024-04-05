@@ -16,7 +16,7 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Dev Script
         run: npm run dev
