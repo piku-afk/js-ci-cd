@@ -1,0 +1,21 @@
+name: Dev
+
+on: workflow_dispatch
+
+jobs: 
+  run-dev-script:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Dev Script
+        run: npm run dev
